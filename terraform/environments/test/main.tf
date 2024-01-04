@@ -18,7 +18,10 @@ module "resource_group"  {
   resource_group       = "${var.resource_group}"
   location             = "${var.location}"
 }
-
+resource "azurerm_resource_group" "Azuredevops" {
+  name     = "Azuredevops"
+  location = "${var.location}"
+}
 module "network" {
   source               = "../../modules/network"
   address_space        = "${var.address_space}"
