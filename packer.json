@@ -1,0 +1,50 @@
+{
+    "variables": {
+        "subscription_id": "44ada2e4-89f9-41cc-8efc-3cf76cd05c0c",
+        "tenant_id": "f958e84a-92b8-439f-a62d-4f45996b6d07",
+        "client_id": "d94edf14-44aa-440f-88b7-c53fc30f06c7",
+        "client_secret": "UFT8Q~29w1CRLlGJfzGHMMujhcmT8xiMMyBMOb4_",   
+        "resource_group": "Azuredevops"
+    },
+    "builders": [
+        {
+            "type": "azure-arm",
+            "client_id": "{{user `client_id`}}",
+            "client_secret": "{{user `client_secret`}}",
+            "tenant_id": "{{user `tenant_id`}}",
+            "subscription_id": "{{user `subscription_id`}}",
+            "managed_image_resource_group_name": "{{user `resource_group`}}",
+            "build_resource_group_name": "{{user `resource_group`}}",
+            "managed_image_name": "myPackerImage",
+            "os_type": "Linux",
+            "image_publisher": "Canonical",
+            "image_offer": "UbuntuServer",
+            "image_sku": "18.04-LTS",
+            "vm_size": "Standard_B1s"
+        }
+    ],
+    "provisioners": [
+        {
+            "inline": [
+                "apt-get update",
+                "apt-get upgrade -y",
+                "apt-get install -y npm",
+                "npm cache clean -f",
+                "npm install -g n",
+                "n stable",
+                "npm install -g newman",
+                "apt-get install -y python3-pip",
+                "apt-get install -y unzip",
+                "apt-get install -y chromium-browser",
+                "apt-get install chromium-chromedriver",
+                "apt-get install python3-selenium",
+                "apt-get install -y python3-venv",
+                "python3 -m venv env",
+                "pip3 install selenium"
+            ],
+            "inline_shebang": "/bin/sh -x",
+            "type": "shell",
+            "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'"
+        }
+    ]
+}
