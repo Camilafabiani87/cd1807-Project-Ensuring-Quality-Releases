@@ -13,7 +13,7 @@ terraform {
     access_key           = "7yVaHkaqxwNWAVlVz5mkBOuQoHEG4bgITXDG7iejv1K2yZXeugfv6rTqo3cQedwikMFyrqssvB4v+AStWsuXYg=="
   }
 }
-module "resource_group" {
+module "azurerm_resource_group" {
   source               = "../../modules/resource_group"
   resource_group       = "${var.resource_group}"
   location             = "${var.location}"
