@@ -8,8 +8,8 @@ trigger:
 
 # ToDo: Replace the agent pool name, if you are using Udacity Cloud lab.
 # Otherwise, comment out the line below.
-pool: myAgentPool
-
+pool: 
+  name: Default
 variables:
   python.version: "3.7.6"
   # ToDo: Replace the service connection name as used in the DevOps project settings
@@ -18,9 +18,9 @@ variables:
   projectRoot: $(System.DefaultWorkingDirectory)
   # Environment name
   environmentName:
-    "test"
+    "test-vm"
     # terraform storage number
-  tfstatenumber: "tfstate8769878"
+  tfstatenumber: "storage480935"
   # terraform resource group
   tfrg: "Azuredevops"
   # webapp name
@@ -43,6 +43,7 @@ stages:
             displayName: "Terrafom installation"
             inputs:
               terraformVersion: "1.2.9"
+            enabled: false
 
           # Run Terraform Init on the pipeline agent
           # ToDo: Replace the resource group name, storage account name, and container name below
@@ -57,12 +58,14 @@ stages:
               backendAzureRmStorageAccountName: "$(tfstatenumber)"
               backendAzureRmContainerName: "tfstate"
               backendAzureRmKey: "test.terraform.tfstate"
+            enabled: false
 
           - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
             displayName: Terraform validate
             inputs:
               provider: "azurerm"
               command: "validate"
+            enabled: false
 
           # OPTIONAL - This step is needed only if your Terraform VM uses an SSH key pair for login and you want your pipeline agent to connect to it.
           # Generate an SSH key pair in your local/AZ Cloud shell. Use the public key in the Terraform VM module.
@@ -97,6 +100,7 @@ stages:
               command: "apply"
               workingDirectory: "$(projectRoot)/terraform/environments/test"
               environmentServiceNameAzureRM: "$(azureServiceConnectionId)"
+            enabled: false
 
           # ToDo: Change the workingDirectory path, as applicable to you
           # Destroy the resources in Azure by running a separate pipeline.
@@ -158,7 +162,7 @@ stages:
       # --------------------------------------------#
       # Deploy FakeRestAPI Web App
       - deployment: DeployApi
-        pool: MyAgentPool
+        pool: Default
         environment: $(environmentName)
         strategy:
           runOnce:
@@ -217,7 +221,7 @@ stages:
         # Jmeter - Performance Test Suite
       - job: TestJMeter
         displayName: Test JMeter
-        pool: MyAgentPool
+        pool: Default
         steps:
           - bash: |
               sudo apt-get install openjdk-11-jre-headless -y
