@@ -91,7 +91,7 @@ stages:
               script: |
                 # Check if the resource group already exists and is not in Terraform state
                 terraform import module.resource_group.azurerm_resource_group.Azuredevops /subscriptions/$(subscriptionId)/resourceGroups/$(tfrg)
-
+            enabled: false
           # Run Terraform Apply
           - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
             displayName: Terraform apply
