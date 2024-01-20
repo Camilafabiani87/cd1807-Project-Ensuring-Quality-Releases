@@ -218,7 +218,7 @@ application_type = "project-qa"
 the web app will be named `project-qa-Appservice` and will be hosted at https://project-qa-appservice.azurewebsites.net
 
 When opening this URL after deployment, it will look like that:
-![FastRestAPI](screenshots/fastrestapi.png)
+![FastRestAPI](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/fakeapi.png)
 
 ### Automated testing
 
@@ -227,10 +227,10 @@ When opening this URL after deployment, it will look like that:
 Screenshots of the Test Run Results from Postman shown in Azure DevOps:
 
 * *Data Validation Test*: Ensures the integrity and accuracy of the data exchanged between the client and the server by verifying that the response received meets expected criteria 
-![Postman Data Validation Test](screenshots/postman-datavalid.png)
+![Postman Data Validation Test](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/postmanvalidation.png)
 
 * *Regression Test*: Verifies that recent code changes have not adversely affected existing API functionalities by systematically retesting a suite of previously validated requests and ensuring they still produce the expected responses.
-![Postman Regression Test](screenshots/postman-regression.png)
+![Postman Regression Test](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/postmantest.png)
 
 #### Performance testing with JMeter
 
