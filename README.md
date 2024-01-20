@@ -212,7 +212,7 @@ name = "${var.application_type}-${var.resource_type}"
 
 So if you use for instance 
 ```bash
-application_type = "project-qa"
+application_type = "myapplication-project"
 ```
 
 the web app will be named `project-qa-Appservice` and will be hosted at https://my-application-appservice.azurewebsites.net
@@ -241,20 +241,14 @@ Log outputs of JMeter when executed by the CI/CD pipeline:
 ![Jmeter Stress Test Report](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/stressreport.png)
 
 * *Endurance Test*: Measures the system's ability to sustain prolonged, continuous loads over an extended period, ensuring that performance remains stable and reliable under sustained usage conditions, helping to identify any gradual degradation or resource leaks.
-![Jmeter Endurance Test](screenshots/jmeter-endurance.png)
-![Jmeter Endurance Test](screenshots/jmeter-endurance.png)
+![Jmeter Endurance Test](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/endurance.png)
+![Jmeter Endurance Test](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/endurancereport.png)
 
 #### Funktional UI testing with Selenium
 
 The selenium test will be performed on a different web app (https://www.saucedemo.com/):
 ![Selenium Test](screenshots/selenium_test.png)
 
-
-Overall, the pipeline execution should look like this:
-![CICD pipepine runthrough successful](screenshots/cicd_success.png)
-![CICD pipepine artifaczs](screenshots/cicd_artifacts.png)
-![CICD pipepine Test summary](screenshots/cicd_testsummary.png)
-![CICD Test runs](screenshots/cicd_testruns.png)
 
 ### Monitoring & Observability
 
@@ -264,9 +258,8 @@ Go to the Azure Portal, select your application service and create a new alert i
 
 Execute the Azure Pipeline to trigger an alert.
 
-![Alerts](screenshots/alerts.png)
-![Alert "request" KQL](screenshots/alert_kql.png)
-![Appservice metrics "requests"](screenshots/appservice_metrics.png)
+![Alerts](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/alerta.png)
+![Appservice metrics "requests"](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/metricas-alerta.png)
 
 ### Configure Azure Log Analytics
 
