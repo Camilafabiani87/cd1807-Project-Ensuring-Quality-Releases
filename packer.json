@@ -1,9 +1,9 @@
 {
     "variables": {
-        "subscription_id": "44ada2e4-89f9-41cc-8efc-3cf76cd05c0c",
+        "subscription_id": "a785336a-35d8-4efd-80be-93d34a9e4b66",
         "tenant_id": "f958e84a-92b8-439f-a62d-4f45996b6d07",
-        "client_id": "d94edf14-44aa-440f-88b7-c53fc30f06c7",
-        "client_secret": "UFT8Q~29w1CRLlGJfzGHMMujhcmT8xiMMyBMOb4_",   
+        "client_id": "adb8c358-0db7-496c-aacc-c9a3f2fb1b90",
+        "client_secret": "Uo58Q~4eObL2s5maQWL2ol-jjuW4cg88cKtbZdix",   
         "resource_group": "Azuredevops"
     },
     "builders": [
