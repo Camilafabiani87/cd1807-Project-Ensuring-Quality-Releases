@@ -175,11 +175,15 @@ Within Azure Pipelines, you have the flexibility to run parallel jobs on either 
 
 * Create a new project.
 * Generate a personal access token (PAT) in Azure DevOps and locally store the PAT on your PC. This will be needed for setting up your agent on the VM for the "Build" step.
-* Set up a service connection named `mySC` with access to all pipelines (Project -> Project settings).
-* Create an agent pool named `myAP` with access to all pipelines. Add an agent automatically with the Azure Resource Manager. Include this agent in a new VM within the same resource group, which will handle the "Build" step.
+* Set up a service connection named `myServiceConnection` with access to all pipelines (Project -> Project settings).
+* Create an agent pool named `myApplication` with access to all pipelines. Add an agent automatically with the Azure Resource Manager. Include this agent in a new VM within the same resource group, which will handle the "Build" step.
 * Establish a new environment `test-vm` (Azure Pipelines -> Environments) and assign it to another new VM in the same resource group. This VM will handle the "Deploy" and "Test" phases.
 * Create a new pipeline. Choose GitHub and select your GitHub repository. Configure the pipeline by opting for "Existing Azure Pipelines YAML File" and select the azure-pipelines.yaml file from the menu on the right.
-
+![My Token](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/mytoken.png)
+![MyServiceConecction](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/serviceconection-2.png)
+![myAgent](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/myagentpool.png)
+![myAgent](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/myagent-ok.png)
+![myAgent](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/myagentok2.png)
 
 On the Review page, ensure to update the Terraform variables:
 
