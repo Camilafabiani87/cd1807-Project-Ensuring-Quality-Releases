@@ -259,7 +259,7 @@ Execute the Azure Pipeline to trigger an alert.
 
 - Create a custom log in the log analytics workspaces of azure portal. You have to ingest the output file of the selenium test, select a timestamp format and provide the file's path in the virtual machine.  Now, you can run the table with the logs.
 
-![Logs](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/logs.png)
+![Logs](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/logs-.png)
 
 ## Clean-up
 
