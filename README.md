@@ -244,14 +244,6 @@ Log outputs of JMeter when executed by the CI/CD pipeline:
 ![Jmeter Endurance Test](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/endurance.png)
 ![Jmeter Endurance Test](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/endurancereport.png)
 
-#### Funktional UI testing with Selenium
-
-The selenium test will be performed on a different web app (https://www.saucedemo.com/):
-![Selenium Test](screenshots/selenium_test.png)
-
-
-### Monitoring & Observability
-
 ### Azure Monitor
 
 Go to the Azure Portal, select your application service and create a new alert in the "Monitoring" group:
@@ -265,24 +257,9 @@ Execute the Azure Pipeline to trigger an alert.
 
 #### Setting up custom logs
 
-Download the *selenium-test.log* artifact from Azure Devops
-![selenium-test.log Artifact](screenshots/seleniumlog_artifact.png)
+- Create a custom log in the log analytics workspaces of azure portal. You have to ingest the output file of the selenium test, select a timestamp format and provide the file's path in the virtual machine.  Now, you can run the table with the logs.
 
-Go to the Azure Portal to Azure Log Analytics workspaces and set up an agent on the VM the test step where the Selenium test will be performed and install an agent on it. For that, you need to connect this VM to Log Analytics and create a Data Collection Rule including the logs on it.
-![Log Analytics connected VMs](screenshots/la_connectedVMs.png)
-![Log Analytics connected Data sSts](screenshots/linuxsyslog.png)
-
-Then go to ***Logs*** and create a new custom log. Upload *selenium-test.log*. Then select "Timestamp" `YYYY-MM-DD HH:MM:SS` as the record delimiter and add the path of *selenium-test.log* of the VM the step has been performed on as the log collections path (it can some time for the VM to be able to collect the logs).
-![selenium log found on VM](screenshots/vm_seleniumlog.png)
-
-![Log Analytics path for selenium-test.log Artifact](screenshots/linuxpath.png)
-
-#### Querying custom logs
-
-To query the custom logs, go to "Logs" in the "General" group of your Log Analytics workspace.
-
-Select your custom log and run it:
-![selenium.log Custom Log KQL](screenshots/selenium_cl.png)
+![Logs](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/logs.png)
 
 ## Clean-up
 
