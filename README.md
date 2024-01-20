@@ -69,6 +69,7 @@ resource_group="..." # e.g. Azuredevops
 image_name="packer-image"
 ```
 ![Packer Image](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/packer-init1.png)
+![Packer Image BUILD](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/packerbuild1.png)
 
 ### Configure the storage account and state backend
 Terraform facilitates the persistence of state in remote storage. Refer to the Tutorial: Store Terraform state in Azure Storage for comprehensive instructions, or adhere to the steps outlined below.
@@ -146,7 +147,6 @@ Provide this key in terraform/modules/vm for *vm.tf*:
     public_key = "..." # starts with "ssh-rsa"
   }
 ```
-
 ### Executing Terraform
 
 Terraform generates the subsequent resources for a designated environment tier:
@@ -195,9 +195,11 @@ variables:
 ```
 
 Once the pipeline will run the "Build" step, it will provide the Terraform resources:
-![terraform init](screenshots/terraform-init.png)
-![terraform validate](screenshots/terraform-validate.png)
-![terraform apply](screenshots/terraform-apply.png)
+![terraform init](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/terraform-init1.png)
+![terraform init2](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/terraform-init.png)
+![terraform plan](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/terraform-plan1.png)
+![terraform plan2](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/terraform-plan2.png)
+![terraform apply](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/terraform-apply1.png)
 
 When having run the pipeline up to the "Deploy" step, the FakeRestAPI will be deployed as an app service at URL defined at terraform/modules/appservice in *appservice.tf*:
 ```bash
