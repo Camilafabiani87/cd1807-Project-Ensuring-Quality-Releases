@@ -215,7 +215,7 @@ So if you use for instance
 application_type = "project-qa"
 ```
 
-the web app will be named `project-qa-Appservice` and will be hosted at https://project-qa-appservice.azurewebsites.net
+the web app will be named `project-qa-Appservice` and will be hosted at https://my-application-appservice.azurewebsites.net
 
 When opening this URL after deployment, it will look like that:
 ![FastRestAPI](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/fakeapi.png)
@@ -237,9 +237,11 @@ Screenshots of the Test Run Results from Postman shown in Azure DevOps:
 Log outputs of JMeter when executed by the CI/CD pipeline:
 
 * *Stress Test*: Evaluates the system's robustness and performance under high loads by simulating a large number of concurrent users or heavy transaction volumes to identify potential bottlenecks and assess system stability.
-![Jmeter Stress Test](screenshots/jmeter-stress.png)
+![Jmeter Stress Test](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/jmaterstresstest.png)
+![Jmeter Stress Test Report](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/stressreport.png)
 
 * *Endurance Test*: Measures the system's ability to sustain prolonged, continuous loads over an extended period, ensuring that performance remains stable and reliable under sustained usage conditions, helping to identify any gradual degradation or resource leaks.
+![Jmeter Endurance Test](screenshots/jmeter-endurance.png)
 ![Jmeter Endurance Test](screenshots/jmeter-endurance.png)
 
 #### Funktional UI testing with Selenium
