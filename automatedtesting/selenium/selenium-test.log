@@ -4,8 +4,7 @@
 2024-01-20 16:40:15 Login successful! Proceeding with tests.
 2024-01-20 16:40:16 Start test adding items to cart...
 2024-01-20 16:40:16 Items 'Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)' added.
-2024-01-20 16:40:16 6 Items successfully added to cart! Proceeding with removing those items from the cart.
+2024-01-20 16:40:16 Items successfully added to cart! Proceeding with removing those items from the cart.
 2024-01-20 16:40:16 Start test removing items from the cart...
 2024-01-20 16:40:17 Items 'Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)' removed.
-2024-01-20 16:40:17 All items removed from cart successfully!
 2024-01-20 16:40:17 UI Tests completed successfully!
