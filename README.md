@@ -39,7 +39,7 @@ The following are the dependencies of the project you will need:
 
 ### Login with Azure CLI
 
-To begin, initiate your Azure CLI session by executing: az login
+To begin, initiate your Azure CLI session by executing: `az login`
 
 ## Run Packer image for VM
 
@@ -68,7 +68,7 @@ subscription_id="..."
 resource_group="..." # e.g. Azuredevops
 image_name="packer-image"
 ```
-![Packer Image]()
+![Packer Image](https://github.com/Camilafabiani87/cd1807-Project-Ensuring-Quality-Releases/blob/main/img/packer-init1.png)
 
 ### Configure the storage account and state backend
 Terraform facilitates the persistence of state in remote storage. Refer to the Tutorial: Store Terraform state in Azure Storage for comprehensive instructions, or adhere to the steps outlined below.
